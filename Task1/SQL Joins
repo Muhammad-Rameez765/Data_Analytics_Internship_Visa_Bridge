@@ -1,0 +1,39 @@
+# SQL For Merging Datasets
+
+SELECT 
+  t.CustomerID,
+  t.TransactionID,
+  t.Date,
+  t.AmountSpent,
+  d.Age,
+  d.Gender,
+  d.IncomeLevel,
+  d.LoyaltyMember
+FROM transactions t
+JOIN demographics d ON t.CustomerID = d.CustomerID;
+
+
+SELECT 
+  t.CustomerID,
+  t.AmountSpent,
+  s.Region,
+  s.UrbanRural
+FROM transactions t
+JOIN stores s ON t.StoreID = s.StoreID;
+
+
+SELECT 
+  t.TransactionID,
+  t.CustomerID,
+  t.AmountSpent,
+  t.ProductCategory,
+  d.Age,
+  d.Gender,
+  d.IncomeLevel,
+  d.LoyaltyMember,
+  s.Region,
+  s.StoreSize,
+  s.UrbanRural
+FROM transactions t
+JOIN demographics d ON t.CustomerID = d.CustomerID
+JOIN stores s ON t.StoreID = s.StoreID;
