@@ -1,0 +1,843 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20251.25.0313.2002                               -->
+<workbook original-version='18.1' source-build='2025.1.0 (20251.25.0313.2002)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+    <ZoneBackgroundTransparency />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='top10_recommendations+' inline='true' name='federated.0zah3sf0y2o78d1dqkdok014djr0' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='top10_recommendations' name='textscan.12utq600jbh3bq114jo241afruo9'>
+            <connection class='textscan' directory='C:/Users/geeze/Downloads/Last Final Datasets/Task2/Tableau CSV&apos;s' filename='top10_recommendations.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation type='collection'>
+          <relation connection='textscan.12utq600jbh3bq114jo241afruo9' name='top10_recommendations.csv' table='[top10_recommendations#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_PK' separator=','>
+              <column datatype='string' name='MachineID' ordinal='0' />
+              <column datatype='real' name='PredictedFailureProbability' ordinal='1' />
+              <column datatype='date' name='RecommendedMaintenanceDate' ordinal='2' />
+              <column datatype='string' name='MachineType' ordinal='3' />
+              <column datatype='integer' name='AgeYears' ordinal='4' />
+            </columns>
+          </relation>
+          <relation connection='textscan.12utq600jbh3bq114jo241afruo9' name='failure_probabilities_daily.csv' table='[failure_probabilities_daily#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_PK' separator=','>
+              <column datatype='string' name='MachineID' ordinal='0' />
+              <column datatype='date' name='Date' ordinal='1' />
+              <column datatype='real' name='PredictedFailureProbability' ordinal='2' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[AgeYears]' value='[top10_recommendations.csv].[AgeYears]' />
+          <map key='[Date]' value='[failure_probabilities_daily.csv].[Date]' />
+          <map key='[MachineID (failure_probabilities_daily.csv)]' value='[failure_probabilities_daily.csv].[MachineID]' />
+          <map key='[MachineID]' value='[top10_recommendations.csv].[MachineID]' />
+          <map key='[MachineType]' value='[top10_recommendations.csv].[MachineType]' />
+          <map key='[PredictedFailureProbability (failure_probabilities_daily.csv)]' value='[failure_probabilities_daily.csv].[PredictedFailureProbability]' />
+          <map key='[PredictedFailureProbability]' value='[top10_recommendations.csv].[PredictedFailureProbability]' />
+          <map key='[RecommendedMaintenanceDate]' value='[top10_recommendations.csv].[RecommendedMaintenanceDate]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[top10_recommendations.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;Rs&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_PK&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[failure_probabilities_daily.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;Rs&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_PK&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MachineID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[MachineID]</local-name>
+            <parent-name>[top10_recommendations.csv]</parent-name>
+            <remote-alias>MachineID</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[top10_recommendations.csv_606E1E02B0AE4AA59E1B52E436237BC3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PredictedFailureProbability</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[PredictedFailureProbability]</local-name>
+            <parent-name>[top10_recommendations.csv]</parent-name>
+            <remote-alias>PredictedFailureProbability</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[top10_recommendations.csv_606E1E02B0AE4AA59E1B52E436237BC3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>RecommendedMaintenanceDate</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[RecommendedMaintenanceDate]</local-name>
+            <parent-name>[top10_recommendations.csv]</parent-name>
+            <remote-alias>RecommendedMaintenanceDate</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[top10_recommendations.csv_606E1E02B0AE4AA59E1B52E436237BC3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MachineType</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[MachineType]</local-name>
+            <parent-name>[top10_recommendations.csv]</parent-name>
+            <remote-alias>MachineType</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[top10_recommendations.csv_606E1E02B0AE4AA59E1B52E436237BC3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AgeYears</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[AgeYears]</local-name>
+            <parent-name>[top10_recommendations.csv]</parent-name>
+            <remote-alias>AgeYears</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[top10_recommendations.csv_606E1E02B0AE4AA59E1B52E436237BC3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MachineID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[MachineID (failure_probabilities_daily.csv)]</local-name>
+            <parent-name>[failure_probabilities_daily.csv]</parent-name>
+            <remote-alias>MachineID</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[failure_probabilities_daily.csv_ADC543F4CBD74E8D9FFCFF4865F4AAA2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[Date]</local-name>
+            <parent-name>[failure_probabilities_daily.csv]</parent-name>
+            <remote-alias>Date</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[failure_probabilities_daily.csv_ADC543F4CBD74E8D9FFCFF4865F4AAA2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PredictedFailureProbability</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[PredictedFailureProbability (failure_probabilities_daily.csv)]</local-name>
+            <parent-name>[failure_probabilities_daily.csv]</parent-name>
+            <remote-alias>PredictedFailureProbability</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[failure_probabilities_daily.csv_ADC543F4CBD74E8D9FFCFF4865F4AAA2]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Age Years' datatype='integer' name='[AgeYears]' role='measure' type='quantitative' />
+      <column caption='MachineID (failure probabilities daily.csv)' datatype='string' name='[MachineID (failure_probabilities_daily.csv)]' role='dimension' type='nominal' />
+      <column caption='Machine ID' datatype='string' name='[MachineID]' role='dimension' type='nominal' />
+      <column caption='Machine Type' datatype='string' name='[MachineType]' role='dimension' type='nominal' />
+      <column caption='PredictedFailureProbability (failure probabilities daily.csv)' datatype='real' name='[PredictedFailureProbability (failure_probabilities_daily.csv)]' role='measure' type='quantitative' />
+      <column caption='Predicted Failure Probability' datatype='real' name='[PredictedFailureProbability]' role='measure' type='quantitative' />
+      <column caption='Recommended Maintenance Date' datatype='date' name='[RecommendedMaintenanceDate]' role='dimension' type='ordinal' />
+      <column caption='failure_probabilities_daily.csv' datatype='table' name='[__tableau_internal_object_id__].[failure_probabilities_daily.csv_ADC543F4CBD74E8D9FFCFF4865F4AAA2]' role='measure' type='quantitative' />
+      <column caption='top10_recommendations.csv' datatype='table' name='[__tableau_internal_object_id__].[top10_recommendations.csv_606E1E02B0AE4AA59E1B52E436237BC3]' role='measure' type='quantitative' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='Data/TableauTemp/#TableauTemp_0dctmes1vq8fgd10noiwc03s1yyl.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='06/08/2025 11:32:25 AM' username='tableau_internal_user'>
+          <relation type='collection'>
+            <relation name='top10_recommendations.csv_606E1E02B0AE4AA59E1B52E436237BC3' table='[Extract].[top10_recommendations.csv_606E1E02B0AE4AA59E1B52E436237BC3]' type='table' />
+            <relation name='failure_probabilities_daily.csv_ADC543F4CBD74E8D9FFCFF4865F4AAA2' table='[Extract].[failure_probabilities_daily.csv_ADC543F4CBD74E8D9FFCFF4865F4AAA2]' type='table' />
+          </relation>
+          <cols>
+            <map key='[AgeYears]' value='[top10_recommendations.csv_606E1E02B0AE4AA59E1B52E436237BC3].[AgeYears]' />
+            <map key='[Date]' value='[failure_probabilities_daily.csv_ADC543F4CBD74E8D9FFCFF4865F4AAA2].[Date]' />
+            <map key='[MachineID (failure_probabilities_daily.csv)]' value='[failure_probabilities_daily.csv_ADC543F4CBD74E8D9FFCFF4865F4AAA2].[MachineID]' />
+            <map key='[MachineID]' value='[top10_recommendations.csv_606E1E02B0AE4AA59E1B52E436237BC3].[MachineID]' />
+            <map key='[MachineType]' value='[top10_recommendations.csv_606E1E02B0AE4AA59E1B52E436237BC3].[MachineType]' />
+            <map key='[PredictedFailureProbability (failure_probabilities_daily.csv)]' value='[failure_probabilities_daily.csv_ADC543F4CBD74E8D9FFCFF4865F4AAA2].[PredictedFailureProbability]' />
+            <map key='[PredictedFailureProbability]' value='[top10_recommendations.csv_606E1E02B0AE4AA59E1B52E436237BC3].[PredictedFailureProbability]' />
+            <map key='[RecommendedMaintenanceDate]' value='[top10_recommendations.csv_606E1E02B0AE4AA59E1B52E436237BC3].[RecommendedMaintenanceDate]' />
+          </cols>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>MachineID</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[MachineID]</local-name>
+              <parent-name>[top10_recommendations.csv_606E1E02B0AE4AA59E1B52E436237BC3]</parent-name>
+              <remote-alias>MachineID</remote-alias>
+              <ordinal>0</ordinal>
+              <family>top10_recommendations.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[top10_recommendations.csv_606E1E02B0AE4AA59E1B52E436237BC3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PredictedFailureProbability</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[PredictedFailureProbability]</local-name>
+              <parent-name>[top10_recommendations.csv_606E1E02B0AE4AA59E1B52E436237BC3]</parent-name>
+              <remote-alias>PredictedFailureProbability</remote-alias>
+              <ordinal>1</ordinal>
+              <family>top10_recommendations.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[top10_recommendations.csv_606E1E02B0AE4AA59E1B52E436237BC3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>RecommendedMaintenanceDate</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[RecommendedMaintenanceDate]</local-name>
+              <parent-name>[top10_recommendations.csv_606E1E02B0AE4AA59E1B52E436237BC3]</parent-name>
+              <remote-alias>RecommendedMaintenanceDate</remote-alias>
+              <ordinal>2</ordinal>
+              <family>top10_recommendations.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[top10_recommendations.csv_606E1E02B0AE4AA59E1B52E436237BC3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>MachineType</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[MachineType]</local-name>
+              <parent-name>[top10_recommendations.csv_606E1E02B0AE4AA59E1B52E436237BC3]</parent-name>
+              <remote-alias>MachineType</remote-alias>
+              <ordinal>3</ordinal>
+              <family>top10_recommendations.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[top10_recommendations.csv_606E1E02B0AE4AA59E1B52E436237BC3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>AgeYears</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[AgeYears]</local-name>
+              <parent-name>[top10_recommendations.csv_606E1E02B0AE4AA59E1B52E436237BC3]</parent-name>
+              <remote-alias>AgeYears</remote-alias>
+              <ordinal>4</ordinal>
+              <family>top10_recommendations.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[top10_recommendations.csv_606E1E02B0AE4AA59E1B52E436237BC3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>MachineID</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[MachineID (failure_probabilities_daily.csv)]</local-name>
+              <parent-name>[failure_probabilities_daily.csv_ADC543F4CBD74E8D9FFCFF4865F4AAA2]</parent-name>
+              <remote-alias>MachineID</remote-alias>
+              <ordinal>5</ordinal>
+              <family>failure_probabilities_daily.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>100</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[failure_probabilities_daily.csv_ADC543F4CBD74E8D9FFCFF4865F4AAA2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[Date]</local-name>
+              <parent-name>[failure_probabilities_daily.csv_ADC543F4CBD74E8D9FFCFF4865F4AAA2]</parent-name>
+              <remote-alias>Date</remote-alias>
+              <ordinal>6</ordinal>
+              <family>failure_probabilities_daily.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>3175</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[failure_probabilities_daily.csv_ADC543F4CBD74E8D9FFCFF4865F4AAA2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PredictedFailureProbability</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[PredictedFailureProbability (failure_probabilities_daily.csv)]</local-name>
+              <parent-name>[failure_probabilities_daily.csv_ADC543F4CBD74E8D9FFCFF4865F4AAA2]</parent-name>
+              <remote-alias>PredictedFailureProbability</remote-alias>
+              <ordinal>7</ordinal>
+              <family>failure_probabilities_daily.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>84</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[failure_probabilities_daily.csv_ADC543F4CBD74E8D9FFCFF4865F4AAA2]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Pakistan&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='failure_probabilities_daily.csv' id='failure_probabilities_daily.csv_ADC543F4CBD74E8D9FFCFF4865F4AAA2'>
+            <properties context=''>
+              <relation connection='textscan.12utq600jbh3bq114jo241afruo9' name='failure_probabilities_daily.csv' table='[failure_probabilities_daily#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_PK' separator=','>
+                  <column datatype='string' name='MachineID' ordinal='0' />
+                  <column datatype='date' name='Date' ordinal='1' />
+                  <column datatype='real' name='PredictedFailureProbability' ordinal='2' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='failure_probabilities_daily.csv_ADC543F4CBD74E8D9FFCFF4865F4AAA2' table='[Extract].[failure_probabilities_daily.csv_ADC543F4CBD74E8D9FFCFF4865F4AAA2]' type='table' />
+            </properties>
+          </object>
+          <object caption='top10_recommendations.csv' id='top10_recommendations.csv_606E1E02B0AE4AA59E1B52E436237BC3'>
+            <properties context=''>
+              <relation connection='textscan.12utq600jbh3bq114jo241afruo9' name='top10_recommendations.csv' table='[top10_recommendations#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_PK' separator=','>
+                  <column datatype='string' name='MachineID' ordinal='0' />
+                  <column datatype='real' name='PredictedFailureProbability' ordinal='1' />
+                  <column datatype='date' name='RecommendedMaintenanceDate' ordinal='2' />
+                  <column datatype='string' name='MachineType' ordinal='3' />
+                  <column datatype='integer' name='AgeYears' ordinal='4' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='top10_recommendations.csv_606E1E02B0AE4AA59E1B52E436237BC3' table='[Extract].[top10_recommendations.csv_606E1E02B0AE4AA59E1B52E436237BC3]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='AND'>
+              <expression op='='>
+                <expression op='[MachineID]' />
+                <expression op='[MachineID (failure_probabilities_daily.csv)]' />
+              </expression>
+              <expression op='='>
+                <expression op='[PredictedFailureProbability]' />
+                <expression op='[PredictedFailureProbability (failure_probabilities_daily.csv)]' />
+              </expression>
+            </expression>
+            <first-end-point object-id='top10_recommendations.csv_606E1E02B0AE4AA59E1B52E436237BC3' />
+            <second-end-point object-id='failure_probabilities_daily.csv_ADC543F4CBD74E8D9FFCFF4865F4AAA2' />
+          </relationship>
+        </relationships>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontcolor='#000000' fontname='Benton Sans Book'>Failure Probability Over Time</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='top10_recommendations+' name='federated.0zah3sf0y2o78d1dqkdok014djr0' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0zah3sf0y2o78d1dqkdok014djr0'>
+            <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+            <column caption='MachineID (failure probabilities daily.csv)' datatype='string' name='[MachineID (failure_probabilities_daily.csv)]' role='dimension' type='nominal' />
+            <column caption='PredictedFailureProbability (failure probabilities daily.csv)' datatype='real' name='[PredictedFailureProbability (failure_probabilities_daily.csv)]' role='measure' type='quantitative' />
+            <column-instance column='[MachineID (failure_probabilities_daily.csv)]' derivation='None' name='[none:MachineID (failure_probabilities_daily.csv):nk]' pivot='key' type='nominal' />
+            <column-instance column='[PredictedFailureProbability (failure_probabilities_daily.csv)]' derivation='Sum' name='[sum:PredictedFailureProbability (failure_probabilities_daily.csv):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Date]' derivation='Year' name='[yr:Date:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0zah3sf0y2o78d1dqkdok014djr0].[none:MachineID (failure_probabilities_daily.csv):nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M001&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M002&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M003&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M004&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M005&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M006&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M007&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M008&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M009&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M010&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M011&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M012&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M013&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M014&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M015&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M016&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M017&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M018&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M019&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M020&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M021&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M022&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M023&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M024&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M025&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M026&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M027&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M028&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M029&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M030&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M031&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M032&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M033&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M034&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M035&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M036&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M037&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M038&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M039&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M040&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M041&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M042&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M043&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M044&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M045&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M046&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M047&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M048&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M049&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M050&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M051&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M052&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M053&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M054&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M055&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M056&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M057&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M058&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M059&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M060&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M061&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M062&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M063&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M064&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M065&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M066&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M067&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M068&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M069&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M070&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M071&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M072&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M073&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M074&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M075&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M076&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M077&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M078&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M079&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M080&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M081&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M082&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M083&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M084&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M085&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M086&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M087&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M088&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M089&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M090&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M091&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M092&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M093&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M094&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M095&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M096&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M097&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M098&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M099&quot;' />
+              <groupfilter function='member' level='[none:MachineID (failure_probabilities_daily.csv):nk]' member='&quot;M100&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0zah3sf0y2o78d1dqkdok014djr0].[none:MachineID (failure_probabilities_daily.csv):nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#e15759' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0zah3sf0y2o78d1dqkdok014djr0].[sum:PredictedFailureProbability (failure_probabilities_daily.csv):qk]</rows>
+        <cols>[federated.0zah3sf0y2o78d1dqkdok014djr0].[yr:Date:ok]</cols>
+      </table>
+      <simple-id uuid='{7E63C3D6-4D2F-41AD-B046-4D4F1E1F4A7B}' />
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontcolor='#404040' fontname='quote-cjk-patch'>Top 10 Machines Needing Maintenance</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='top10_recommendations+' name='federated.0zah3sf0y2o78d1dqkdok014djr0' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0zah3sf0y2o78d1dqkdok014djr0'>
+            <column caption='Age Years' datatype='integer' name='[AgeYears]' role='measure' type='quantitative' />
+            <column caption='Machine ID' datatype='string' name='[MachineID]' role='dimension' type='nominal' />
+            <column caption='Machine Type' datatype='string' name='[MachineType]' role='dimension' type='nominal' />
+            <column caption='Predicted Failure Probability' datatype='real' name='[PredictedFailureProbability]' role='measure' type='quantitative' />
+            <column caption='Recommended Maintenance Date' datatype='date' name='[RecommendedMaintenanceDate]' role='dimension' type='ordinal' />
+            <column-instance column='[AgeYears]' derivation='Avg' name='[avg:AgeYears:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[MachineID]' derivation='None' name='[none:MachineID:nk]' pivot='key' type='nominal' />
+            <column-instance column='[MachineType]' derivation='None' name='[none:MachineType:nk]' pivot='key' type='nominal' />
+            <column-instance column='[AgeYears]' derivation='Sum' name='[sum:AgeYears:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[PredictedFailureProbability]' derivation='Sum' name='[sum:PredictedFailureProbability:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[RecommendedMaintenanceDate]' derivation='Year' name='[yr:RecommendedMaintenanceDate:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0zah3sf0y2o78d1dqkdok014djr0].[none:MachineType:nk]'>
+            <groupfilter function='member' level='[none:MachineType:nk]' member='&quot;TypeA&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='quantitative' column='[federated.0zah3sf0y2o78d1dqkdok014djr0].[sum:AgeYears:qk]' included-values='in-range'>
+            <min>4</min>
+            <max>12</max>
+          </filter>
+          <slices>
+            <column>[federated.0zah3sf0y2o78d1dqkdok014djr0].[none:MachineType:nk]</column>
+            <column>[federated.0zah3sf0y2o78d1dqkdok014djr0].[sum:AgeYears:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='tick-color' field='[federated.0zah3sf0y2o78d1dqkdok014djr0].[sum:PredictedFailureProbability:qk]' value='#df543d' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='background-color' value='#00000000' />
+            <format attr='band-color' scope='cols' value='#00000000' />
+            <format attr='band-color' scope='rows' value='#f5f5f5' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.0zah3sf0y2o78d1dqkdok014djr0].[sum:PredictedFailureProbability:qk]' value='p0.0%' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='background-color' value='#00000000' />
+            <format attr='background-color' data-class='subtotal' value='#00000000' />
+            <format attr='band-color' scope='rows' value='#00000000' />
+            <format attr='band-color' scope='cols' value='#00000000' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='band-size' scope='rows' value='5' />
+            <format attr='band-size' scope='cols' value='1' />
+          </style-rule>
+          <style-rule element='axis-title'>
+            <format attr='color' field='[federated.0zah3sf0y2o78d1dqkdok014djr0].[sum:PredictedFailureProbability:qk]' value='#000000' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.0zah3sf0y2o78d1dqkdok014djr0].[sum:PredictedFailureProbability:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.0zah3sf0y2o78d1dqkdok014djr0].[avg:AgeYears:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.0zah3sf0y2o78d1dqkdok014djr0].[none:MachineID:nk]</rows>
+        <cols>(([federated.0zah3sf0y2o78d1dqkdok014djr0].[none:MachineType:nk] / [federated.0zah3sf0y2o78d1dqkdok014djr0].[yr:RecommendedMaintenanceDate:ok]) * ([federated.0zah3sf0y2o78d1dqkdok014djr0].[sum:PredictedFailureProbability:qk] + [federated.0zah3sf0y2o78d1dqkdok014djr0].[avg:AgeYears:qk]))</cols>
+      </table>
+      <simple-id uuid='{6431A938-51BB-4733-A017-FD956103614C}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Predictive Maintenance Dashboard'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#000000' fontname='Benton Sans SemiDemi' fontsize='24'>Predictive Maintenance</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style />
+      <size maxheight='1160' maxwidth='1720' minheight='660' minwidth='1620' sizing-mode='range' />
+      <datasources>
+        <datasource caption='top10_recommendations+' name='federated.0zah3sf0y2o78d1dqkdok014djr0' />
+      </datasources>
+      <datasource-dependencies datasource='federated.0zah3sf0y2o78d1dqkdok014djr0'>
+        <column caption='Machine Type' datatype='string' name='[MachineType]' role='dimension' type='nominal' />
+        <column-instance column='[MachineType]' derivation='None' name='[none:MachineType:nk]' pivot='key' type='nominal' />
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='97858' id='16' param='vert' type-v2='layout-flow' w='99018' x='491' y='1071'>
+            <zone h='7497' id='17' type-v2='title' w='99018' x='491' y='1071'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='90361' id='13' param='vert' type-v2='layout-flow' w='99018' x='491' y='8568'>
+              <zone h='90361' id='7' param='horz' type-v2='layout-flow' w='99018' x='491' y='8568'>
+                <zone h='90361' id='5' type-v2='layout-basic' w='89497' x='491' y='8568'>
+                  <zone h='45178' id='3' name='Sheet 2' w='89497' x='491' y='8568'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone h='45183' id='14' name='Sheet 1' w='89497' x='491' y='53746'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                </zone>
+                <zone fixed-size='155' h='90361' id='6' is-fixed='true' param='vert' type-v2='layout-flow' w='9521' x='89988' y='8568'>
+                  <zone h='17135' id='8' name='Sheet 2' param='[federated.0zah3sf0y2o78d1dqkdok014djr0].[none:MachineType:nk]' type-v2='filter' w='9521' x='89988' y='8568'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <layout-options>
+            <title>
+              <formatted-text>
+                <run bold='true' fontalignment='1' fontcolor='#000000' fontname='Benton Sans SemiDemi' fontsize='24'>Predictive Maintenance</run>
+              </formatted-text>
+            </title>
+          </layout-options>
+          <size maxheight='750' minheight='750' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='21' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='97858' id='20' param='vert' type-v2='layout-flow' w='99018' x='491' y='1071'>
+                <zone h='7497' id='17' type-v2='title' w='99018' x='491' y='1071'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='17135' id='8' mode='checkdropdown' name='Sheet 2' param='[federated.0zah3sf0y2o78d1dqkdok014djr0].[none:MachineType:nk]' type-v2='filter' w='9521' x='89988' y='8568'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='45179' id='3' is-fixed='true' name='Sheet 2' w='89497' x='491' y='8568'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='45182' id='14' is-fixed='true' name='Sheet 1' w='89497' x='491' y='53747'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{5CA6E461-017A-43A4-B8CE-1F737150E181}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='37'>
+    <window class='worksheet' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{725555D8-E612-42D1-A6A1-A76D9D5BDAA8}' />
+    </window>
+    <window class='worksheet' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.0zah3sf0y2o78d1dqkdok014djr0].[none:MachineType:nk]' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{6D28A43F-5D4E-42FE-B7D9-E8926A80D30F}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Predictive Maintenance Dashboard'>
+      <viewpoints>
+        <viewpoint name='Sheet 1'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Sheet 2' />
+      </viewpoints>
+      <active id='8' />
+      <device-preview visible='true'>
+        <device name='Large Desktop Monitor' type='Desktop' />
+      </device-preview>
+      <simple-id uuid='{E44707F0-0985-4DFF-B3E2-E54EE9622B31}' />
+    </window>
+  </windows>
+</workbook>
