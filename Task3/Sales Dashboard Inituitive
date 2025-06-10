@@ -1,0 +1,32 @@
+Project: Sales Dashboard for a SaaS Company
+
+ Objective:
+To build an interactive sales dashboard that enables leadership to track revenue trends, identify underperforming segments, and support strategic decisions across regions and product tiers.
+
+ Tools & Techniques Used:
+Power BI for dashboard creation and interactivity
+
+Python (Pandas, Seaborn, KMeans) for data cleaning, exploratory analysis, and customer segmentation
+
+SQL & Excel for joins, aggregation, and handling missing values
+
+K-Means Clustering to group customers based on revenue behavior and contract patterns
+
+ Key Dashboard Features:
+Sales by Region & Product Tier with dynamic filters
+
+Customer Segmentation visualized via clustering
+
+Revenue and Churn Insights to highlight areas of improvement
+
+KPIs like Average Revenue per Customer, Churn Rate, and Growth Opportunities
+
+ Key Findings:
+Two regions had low revenue despite large market sizes → Suggested increasing sales team presence.
+
+The Basic tier had the highest churn → Recommended product experience improvement or bundling with support.
+
+High contract length didn’t always correlate with revenue → Opportunity to optimize pricing for long-term plans.
+
+ Outcome:
+Delivered a user-friendly, fast-loading dashboard with actionable insights and business recommendations. Helped stakeholders identify key growth levers in the SaaS business model.
