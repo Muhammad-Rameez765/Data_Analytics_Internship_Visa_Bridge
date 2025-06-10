@@ -1,0 +1,10 @@
+SaleID,SaleDate,CustomerID,Industry,CompanySize,ChurnStatus,ProductTier,Region,Market,Revenue,ContractLength,Cluster
+S00001,2024-06-12,C1000,Finance,M,0,Basic,NE,East,532.07,36.0,1
+S00002,2024-01-29,C1001,Healthcare,L,0,Enterprise,West,West,26650.65,12.0,2
+S00003,2024-01-07,C1002,Finance,Small,0,Pro,South,South,2843.36,36.0,1
+S00004,2024-03-11,C1003,Healthcare,s,1,Pro,NW,NorthWest,3767.7,6.0,0
+S00005,2024-03-03,C1004,Finance,s,0,Basic,NE,East,610.94,24.0,1
+S00007,2024-02-05,C1006,Technology,Small,0,Basic,NW,NorthWest,636.23,36.0,1
+S00008,2024-01-27,C1007,Technology,L,0,Enterprise,East,East,12323.66,12.0,1
+S00009,2024-06-22,C1008,Manufacturing,Large,0,Pro,NE,East,3690.0,6.0,1
+S00010,2024-05-19,C1009,Technology,Small,1,Pro,North,North,2168.51,36.0,0
